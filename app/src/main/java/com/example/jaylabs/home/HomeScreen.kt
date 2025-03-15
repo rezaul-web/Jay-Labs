@@ -47,7 +47,7 @@ fun HomeScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Submit Your Issue",
+            text = "Submit Your Image",
             fontSize = 22.sp,
             fontWeight = FontWeight.Bold
         )
@@ -85,7 +85,7 @@ fun HomeScreen(
         JayLabsTextField(
             value = description,
             onValueChange = { description = it },
-            label = { Text("Describe your problem") },
+            label = { Text("Add Label") },
             modifier = Modifier.fillMaxWidth()
         )
 

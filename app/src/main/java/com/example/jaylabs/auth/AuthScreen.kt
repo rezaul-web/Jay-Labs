@@ -54,7 +54,9 @@ fun AuthScreen(modifier: Modifier = Modifier, navController: NavHostController) 
                 .background(brush)
         )
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate(Route.HomeScreen.route)
+            },
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.White,
                 contentColor = Orange
@@ -62,6 +64,7 @@ fun AuthScreen(modifier: Modifier = Modifier, navController: NavHostController) 
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 .padding(16.dp)
+                .padding(top = 32.dp)
         ) {
             Text(text = "Skip")
         }
@@ -73,7 +76,7 @@ fun AuthScreen(modifier: Modifier = Modifier, navController: NavHostController) 
         ) {
 
             Text(
-                text = "Welcome", color = Color.Black,
+                text = "Welcome To", color = Color.Black,
                 fontSize = 50.sp,
 
                 )

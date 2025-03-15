@@ -60,7 +60,7 @@ fun LogInScreen(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var isPasswordVisible by remember { mutableStateOf(false) }
-    val verticalScroll= rememberScrollState()
+    val verticalScroll = rememberScrollState()
 
     val context = LocalContext.current
     val uiState by viewModel.loginState.collectAsState()
@@ -88,6 +88,7 @@ fun LogInScreen(
 
     Box(
 
+
     ) {
         // Background Image
         Image(
@@ -106,13 +107,17 @@ fun LogInScreen(
                     popUpTo("auth") { inclusive = true }
                 }
             },
-            modifier = Modifier.align(Alignment.TopStart)
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(top = 32.dp, start = 16.dp)
+                .size(32.dp)
         ) {
             Icon(
                 Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = "Back",
-                tint = Color.Black
-            )
+                tint = Color.Black,
+
+                )
         }
 
         // Main Content
