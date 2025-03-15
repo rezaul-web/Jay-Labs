@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.jaylabs.mainapp.Route
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,7 +52,7 @@ fun PastReportsScreen(
                         reportName = reportName,
                         reportDescription = reportDescription
                     ) {
-                        // Handle report click (maybe navigate to a detailed report screen)
+                        navController.navigate("${Route.ReportDetails.route}/$reportName/$reportDescription")
                     }
                 }
             }

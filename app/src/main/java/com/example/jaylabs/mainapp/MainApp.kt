@@ -15,6 +15,7 @@ import com.example.jaylabs.auth.AuthScreen
 import com.example.jaylabs.auth.login.LogInScreen
 import com.example.jaylabs.auth.signup.SignUpScreen
 import com.example.jaylabs.pastreports.PastReportsScreen
+import com.example.jaylabs.pastreports.ReportDetailScreen
 import com.google.firebase.auth.FirebaseAuth
 
 @Composable
@@ -58,6 +59,11 @@ fun MainApp(
         }
         composable(Route.PastReports.route) {
             PastReportsScreen(navController = navController)
+        }
+        composable("${Route.ReportDetails.route}/{reportName}/{reportDescription}") { backStackEntry ->
+            val reportName = backStackEntry.arguments?.getString("reportName")
+            val reportDescription = backStackEntry.arguments?.getString("reportDescription")
+            ReportDetailScreen(reportName = reportName, reportDescription = reportDescription)
         }
 
     }

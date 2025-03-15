@@ -124,7 +124,10 @@ fun DrawerContent(
             }
             items(List(4) { index -> "Report ${index + 1}" to "Description of Report ${index + 1}" }) { (name, desc) ->
                 ReportItem(reportName = name, reportDescription = desc) {
-                    // Handle click (e.g., navigate to report details)
+                   navController.navigate("${Route.ReportDetails.route}/$name/$desc")
+                    scope.launch {
+                        drawerState.close()
+                    }
                 }
             }
         }
